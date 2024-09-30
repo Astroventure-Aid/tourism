@@ -15,19 +15,12 @@ const tripSchema = new mongoose.Schema(
       require: [true, "Please provide Origin of trip"],
     },
     mainPhoto: {
-      public_id: {
-        type: String,
-        required: true,
-      },
-      url: {
-        type: String,
-        required: true,
-      },
+      type: String,
       require: [true, "Please provide main photo of location"],
     },
+    
     slotsAvailable: {
       type: Number,
-      require: [true, "Please provide Slots Available"],
     },
     highlights: [
       {
@@ -39,15 +32,8 @@ const tripSchema = new mongoose.Schema(
     },
     photos: [
       {
-        public_id: {
-          type: String,
-          required: true,
-        },
-        url: {
-          type: String,
-          required: true,
-        },
-      },
+        type: String
+      }
     ],
   },
   {

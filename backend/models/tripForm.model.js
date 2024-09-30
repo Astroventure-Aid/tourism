@@ -14,20 +14,13 @@ const tripFormSchema = new mongoose.Schema(
         type: String,
         require: [true, "Please provide Phone Number"]
     },
+    optionalPhone:{
+      type: String,
+    },
+
     transactionId: {
       type: String,
       required:  [true, "Please provide Transaction Id"],
-    },
-
-    photo: {
-      public_id: {
-        type: String,
-        required: true,
-      },
-      url: {
-        type: String,
-        required: true,
-      },
     },
 
     tripId: {
