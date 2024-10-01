@@ -4,19 +4,23 @@ const tripSchema = new mongoose.Schema(
   {
     location: {
       type: String,
-      require: [true, "Please provide Location of trip"],
+      required: [true, "Please provide Location of trip"],
     },
     tripDate: {
       type: Date,
-      require: [true, "Please provide Date of trip"],
+      required: [true, "Please provide Date of trip"],
     },
     origin: {
       type: String,
-      require: [true, "Please provide Origin of trip"],
+      required: [true, "Please provide Origin of trip"],
     },
     mainPhoto: {
       type: String,
-      require: [true, "Please provide main photo of location"],
+      required: [true, "Please provide main photo of location"],
+    },
+    price:{
+      type: Number,
+      required: [true, "Please provide Price"],
     },
     
     slotsAvailable: {

@@ -4,11 +4,11 @@ const spotSchema = new mongoose.Schema(
   {
     spotName: {
       type: String,
-      require: [true, "Please provide name of Spot"],
+      required: [true, "Please provide name of Spot"],
     },
     spotPhoto: {
       type: String,
-      require: [true, "Please provide photo of spot"],
+      required: [true, "Please provide photo of spot"],
     },
     discription: {
       type: String,
