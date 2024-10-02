@@ -1,0 +1,16 @@
+/* styles.css or a similar global CSS file */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; /* This will allow the main content to expand and push the footer down */
+}

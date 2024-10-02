@@ -1,11 +1,18 @@
 import './App.css'
+import React from 'react';
+import Header from './components/Header/Header.jsx'; // Adjust the path according to your folder structure
+import Footer from './components/Footer/Footer.jsx';
+
 
 function App() {
+
   return (
     <>
-      <h1 className='text-3xl text-blue-800 font-bold'>Astroventures</h1>
+       {/* <Header />  */}
+       <> </>
+       <Footer />
     </>
-  )
+  ) 
 }
-
+  
 export default App
