@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AboutUs = () => {
+const WhoWeAre = () => {
   return (
     <section className="bg-white py-10 px-6 sm:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-between">
       {/* Left Section */}
@@ -108,13 +108,13 @@ const AboutUs = () => {
 
         {/* Red Badge */}
         <div className="absolute top-0 right-0 bg-red-600 text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center text-xs sm:text-sm lg:text-base font-bold shadow-lg transform translate-x-1/2 -translate-y-1/2">
-  <span className="text-center">
-    2.5K+<br />Tours Success
-  </span>
-</div>
+          <span className="text-center">
+            2.5K+<br />Tours Success
+          </span>
+        </div>
       </div>
     </section>
   );
 };
 
-export default AboutUs;
+export default WhoWeAre;
