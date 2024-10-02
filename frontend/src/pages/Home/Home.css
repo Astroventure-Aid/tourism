@@ -1,0 +1,16 @@
+
+.mainPhotoContainer {
+    width: 100%; /* Full width */
+    height: 50vw; /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* To prevent overflow if the image is too large */
+  }
+  
+  .mainPhotoContainer img {
+    width: 100%; /* Make the image take the full width */
+    height: 100%; /* Make the image take the full height */
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  }
+  
