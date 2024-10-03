@@ -1,0 +1,25 @@
+.coverflow-slider {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide {
+    width: 300px; /* Adjust slide width */
+    height: 300px; /* Adjust slide height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* Slide background */
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  

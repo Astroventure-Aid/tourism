@@ -1,8 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const FormComponent = () => {
+  // State variables for form fields
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    optionalPhone: '',
+    transactionId: '',
+    screenshot: null,
+  });
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({
+      ...formData,
+      [id]: value,
+    });
+  };
+
+  // Handle file input change
+  const handleFileChange = (e) => {
+    setFormData({
+      ...formData,
+      screenshot: e.target.files[0],
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    
+  };
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen">
       <div className="bg-grey-50 p-8 rounded-lg shadow-md max-w-lg w-full">
         {/* Form Title */}
         <div className="text-center bg-black text-white py-3 rounded-t-lg mb-6 font-bold text-lg">
@@ -10,13 +44,15 @@ const FormComponent = () => {
         </div>
 
         {/* Form Fields */}
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           {/* Name */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
             <input
               type="text"
               id="name"
+              value={formData.name}
+              onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter your name"
             />
@@ -28,6 +64,8 @@ const FormComponent = () => {
             <input
               type="email"
               id="email"
+              value={formData.email}
+              onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter your email"
             />
@@ -39,6 +77,8 @@ const FormComponent = () => {
             <input
               type="text"
               id="phone"
+              value={formData.phone}
+              onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter your phone number"
             />
@@ -50,6 +90,8 @@ const FormComponent = () => {
             <input
               type="text"
               id="optionalPhone"
+              value={formData.optionalPhone}
+              onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter your optional phone number"
             />
@@ -61,6 +103,8 @@ const FormComponent = () => {
             <input
               type="text"
               id="transactionId"
+              value={formData.transactionId}
+              onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter transaction ID"
             />
@@ -72,6 +116,7 @@ const FormComponent = () => {
             <input
               type="file"
               id="screenshot"
+              onChange={handleFileChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
             />
           </div>

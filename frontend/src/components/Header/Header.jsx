@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 function Header() {
   return (
@@ -16,26 +17,38 @@ function Header() {
         </div>
 
         {/* Navbar Links */}
-        <nav className="">
+        <nav className="navbar">
           <Link to="/">
-            <a className="text-gray-800 hover:text-blue-600 transition duration-300">Home</a>
+            <span className="text-gray-800 hover:text-blue-600 transition duration-300">Home</span>
           </Link>
           <Link to="/about">
-            <a className="text-gray-800 hover:text-blue-600 transition duration-300">About</a>
+            <span className="text-gray-800 hover:text-blue-600 transition duration-300">About</span>
           </Link>
           <Link to="/astroventure">
-            <a className="text-gray-800 hover:text-blue-600 transition duration-300">Astroventure</a>
+            <span className="text-gray-800 hover:text-blue-600 transition duration-300">Astroventure</span>
           </Link>
           <Link to="/contact">
-            <a className="text-gray-800 hover:text-blue-600 transition duration-300">Contact</a>
+            <span className="text-gray-800 hover:text-blue-600 transition duration-300">Contact</span>
           </Link>
         </nav>
 
         {/* Login BTN */}
-        <Link to="/login">
-          <button className=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300 ease-in-out">
-            login/Signup
-          </button>
+        <Link>
+          <div>
+            <SignedIn>
+              {/* Display User Profile Icon when signed in */}
+              <UserButton />
+            </SignedIn>
+
+            <SignedOut>
+              {/* Display Sign-In button when not signed in */}
+              <SignInButton mode="modal">
+                <button className="bg-yellow-500 text-white px-4 py-2 rounded-md">
+                  Sign In
+                </button>
+              </SignInButton>
+            </SignedOut>
+          </div>
         </Link>
       </div>
     </header>
