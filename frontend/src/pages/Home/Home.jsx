@@ -2,6 +2,7 @@ import React from 'react'
 import "./Home.css"
 import WhoWeAre from '../../components/whoWeare/WhoWeAre'
 import MustSee from '../../components/MustSee/MustSee'
+import TripCard from '@/components/TripCard/TripCard'
 
 function Home() {
   return (
@@ -14,7 +15,8 @@ function Home() {
       <WhoWeAre />
 
       <MustSee/>
-
+      
+      <TripCard/>
       
     </div>
   )
