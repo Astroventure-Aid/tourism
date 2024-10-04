@@ -4,6 +4,7 @@ import WhoWeAre from "../../components/whoWeare/WhoWeAre";
 import MustSee from "../../components/MustSee/MustSee";
 import TripCard from "@/components/TripCard/TripCard";
 import Slider from "@/components/Slider/Slider";
+import Upcoming from "../../components/Upcoming/Upcoming"
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       {/* <TripCard /> */}
       <MustSee />
       <Slider/>
+      <Upcoming/>
       
     </div>
   );
