@@ -1,17 +1,32 @@
 import React from "react";
 import "./UpComingTripCard.css"; // Import your CSS file
+import { Link } from "lucide-react";
+import { useNavigate } from "react-router";
 
-const UpComingTripCard = ({ image, title, description }) => {
+const UpComingTripCard = ({ trip }) => {
+  const navigate = useNavigate()
+
+  const handleClick = ()=>{
+    navigate(`/trip/${trip._id}`)
+  }
   return (
     <div className="trip-card">
       <div className="trip-card-content">
-        <div className="trip-card-text">
-          <h3 className="trip-title">{title}</h3>
-          <p className="trip-description">{description}</p>
-          <button className="trip-button">I'm in</button>
+        <div className="trip-card-text w-1/2 flex flex-col justify-between p-8">
+
+          <div className="">
+            <div className="text-4xl font-semibold">{trip.location}</div>
+            {trip.status === "Started" ? (
+              <div className="text-sm text-gray-500">Date: {trip.tripDate}</div>
+            ) : (
+              <div className="text-3xl text-red-500">Coming Soon</div>
+            )}
+            <p className="mt-2 text-gray-600">{trip.origin}</p>
+          </div>
+          <button className="trip-button" onClick={handleClick}>I'm in</button>
         </div>
         <div className="trip-card-image">
-          <img src={image} alt={title} />
+          <img src={trip.mainPhoto} alt="" />
         </div>
       </div>
     </div>

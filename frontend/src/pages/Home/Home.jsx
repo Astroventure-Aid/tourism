@@ -26,11 +26,12 @@ function Home() {
       </video>
     </div>
       <WhoWeAre />
-      {/* <TripCard /> */}
+
+
       <MustSee />
       <Slider />
+
       <Upcoming />
-      {/* <UpComingTripCard/> */}
       <UpcomingSlider />
     </div>
   );

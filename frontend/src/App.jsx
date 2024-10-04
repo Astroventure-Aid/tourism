@@ -30,8 +30,6 @@ function App() {
   useEffect(() => {
     const isAdmin = user?.publicMetadata?.role === 'admin';
     setIsAdmin(isAdmin)
-    console.log(user);
-    console.log(session);
     
   }, [isLoaded, isSignedIn])
 
