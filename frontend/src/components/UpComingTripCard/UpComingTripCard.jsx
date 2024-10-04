@@ -1,6 +1,5 @@
 import React from "react";
 import "./UpComingTripCard.css"; // Import your CSS file
-import { Link } from "lucide-react";
 import { useNavigate } from "react-router";
 
 const UpComingTripCard = ({ trip }) => {
@@ -15,7 +14,7 @@ const UpComingTripCard = ({ trip }) => {
         <div className="trip-card-text w-1/2 flex flex-col justify-between p-8">
 
           <div className="">
-            <div className="text-4xl font-semibold">{trip.location}</div>
+            <div className="text-4xl font-semibold mb-3">{trip.location}</div>
             {trip.status === "Started" ? (
               <div className="text-sm text-gray-500">Date: {trip.tripDate}</div>
             ) : (

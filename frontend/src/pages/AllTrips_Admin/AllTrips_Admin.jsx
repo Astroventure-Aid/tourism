@@ -3,7 +3,7 @@ import "./AllTrips_Admin.css"
 import axios from 'axios';
 
 function AllTrips_Admin() {
-  4
+  
   const [data, setData] = useState([]);
 
   const getForms = async () => {

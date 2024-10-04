@@ -19,44 +19,42 @@ function Header() {
   }, [isLoaded, isSignedIn]);
 
   return (
-    <header className=" fixed top-0 left-0 w-full glass shadow-lg z-50">
-    {/* // <header className="fixed top-0 left-0 w-full max-w-7xl mx-auto glass shadow-lg z-50 h-16 rounded-lg"> */}
+    <header className=" fixed top-0 left-0 w-full glass shadow-lg z-50 px-5">
+  
       <div className="container mx-auto flex justify-between items-center p-2">
         {/* Logo */}
         <div>
-          <a href="#">
-            {/* Using React logo temporarily */}
-            <img className="h-8" alt="React Logo" />
-            {/* <img src={Logo} alt="logo" className="h-8" /> */}
+          <a >
+            <img className="" alt="LOGO " />
           </a>
         </div>
 
         {/* Navbar Links */}
         <nav className="navbar">
           <Link to="/">
-            <span className="text-gray font-bold text-lg hover:text-red-600 transition duration-300">
+            <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300">
               Home
             </span>
           </Link>
           <Link to="/about">
-            <span className="text-gray font-bold text-lg hover:text-red-600 transition duration-300">
+            <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300">
               About
             </span>
           </Link>
           <Link to="/astroventure">
-            <span className="text-gray font-bold text-lg hover:text-red-600 transition duration-300">
+            <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300">
               Astroventure
             </span>
           </Link>
           {!isAdmin ? (
             <Link to="/contact">
-              <span className="text-gray font-bold text-lg hover:text-red-600 transition duration-300">
+              <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300">
                 Contact
               </span>
             </Link>
           ) : (
             <Link to="/admin/allTrips">
-              <span className="text-gray font-bold text-lg hover:text-red-600 transition duration-300">
+              <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300">
                 Dashboard
               </span>
             </Link>
@@ -74,7 +72,7 @@ function Header() {
             <SignedOut>
               {/* Display Sign-In button when not signed in */}
               <SignInButton mode="modal">
-                <button className="bg-yellow-500 text-white px-4 py-2 rounded-md">
+                <button className=" bg-slate-600 text-white px-4 py-2 rounded-md">
                   Sign In
                 </button>
               </SignInButton>

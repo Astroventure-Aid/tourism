@@ -13,7 +13,6 @@ function UpcomingSlider() {
 
   useEffect(() => {
     getTrips()
-
   }, []);
 
   return (
@@ -30,7 +29,7 @@ function UpcomingSlider() {
           <CarouselContent className="-ml-0.25 md:-ml-0.5">
             {
               trips && trips.map((trip) => (
-                <CarouselItem className="flex items-center justify-center md:basis-1/1 lg:basis-1/1  md:pl-0.1"> {/* Reduced padding */}
+                <CarouselItem className="flex items-center justify-center md:basis-1/1 lg:basis-1/1  md:pl-0.1" key={trip._id}> {/* Reduced padding */}
                   <UpcomingCard
                     trip={trip}
                   />
