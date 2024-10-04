@@ -50,7 +50,6 @@ function App() {
         <Route exact path="/admin/tripFroms/:tripId" element={<Layout> <AllForms_Admin /> </Layout>} />
       }
 
-
       <Route path="*" element={<Layout> <NotFound /></Layout>} /> {/* 404 Route */}
     </Routes>
   );

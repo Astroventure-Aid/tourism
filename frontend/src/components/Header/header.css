@@ -1,18 +1,23 @@
 header {
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
-  }
-  
-  .container {
-    max-width: 1200px; /* Set a max-width for your content */
-    margin: 0 auto; /* Center the container */
-  }
-  
-  nav a {
-    padding: 0.5rem; /* Add some padding for better spacing */
-  }
-  
-  nav a:hover {
-    text-decoration: underline; /* Add underline effect on hover */
-  }
-  
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Semi-transparent background */
+  height: 56px;
+}
+
+.container {
+  max-width: 1200px;
+  /* Set a max-width for your content */
+  margin: 0 auto;
+  /* Center the container */
+}
+
+nav a {
+  padding: 0.5rem;
+  /* Add some padding for better spacing */
+}
+
+nav a:hover {
+  text-decoration: underline;
+  /* Add underline effect on hover */
+}

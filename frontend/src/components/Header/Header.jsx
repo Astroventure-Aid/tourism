@@ -19,7 +19,7 @@ function Header() {
   }, [isLoaded, isSignedIn]);
 
   return (
-    <header className=" fixed top-0 left-0 w-full glass shadow-lg z-50 px-5">
+    <header className="header fixed top-0 left-0 w-full glass shadow-lg z-50 px-5">
   
       <div className="container mx-auto flex justify-between items-center p-2">
         {/* Logo */}
