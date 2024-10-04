@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+import { useParams } from 'react-router';
 
 const FormComponent = () => {
   // State variables for form fields
@@ -8,8 +10,10 @@ const FormComponent = () => {
     phone: '',
     optionalPhone: '',
     transactionId: '',
-    screenshot: null,
+    upiPaymentSS: null,
   });
+
+  const { tripId } = useParams()
 
   // Handle input change
   const handleChange = (e) => {
@@ -24,15 +28,16 @@ const FormComponent = () => {
   const handleFileChange = (e) => {
     setFormData({
       ...formData,
-      screenshot: e.target.files[0],
+      upiPaymentSS: e.target.files[0],
     });
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    
+
+    // const res = await axios.post(`http://localhost:4000/api/v1/trip/submit-tripform/${tripId}`)
   };
 
   return (
@@ -110,12 +115,12 @@ const FormComponent = () => {
             />
           </div>
 
-          {/* Screenshot */}
+          {/* upiPaymentSS */}
           <div>
-            <label htmlFor="screenshot" className="block text-sm font-medium text-gray-700">Screenshot</label>
+            <label htmlFor="upiPaymentSS" className="block text-sm font-medium text-gray-700">upiPaymentSS</label>
             <input
               type="file"
-              id="screenshot"
+              id="upiPaymentSS"
               onChange={handleFileChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
             />

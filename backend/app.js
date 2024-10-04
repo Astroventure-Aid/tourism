@@ -1,17 +1,18 @@
-import express from 'express';
-import cors from "cors"
+import express from "express";
+import cors from "cors";
 
 const app = express();
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
+app.use(express.static("public"));
 
 // Routes
-import tripRoutes from "./routes/trip.route.js"
-app.use("/api/v1/trip",tripRoutes)
+import tripRoutes from "./routes/trip.route.js";
+app.use("/api/v1/trip", tripRoutes);
 
 // middleware
-import error from "./middlewares/errror.middleware.js"
-app.use(error)
+import error from "./middlewares/errror.middleware.js";
+app.use(error);
 
-export default app
+export default app;
