@@ -1,26 +1,19 @@
-import {users} from "@clerk/clerk-sdk-node"
+import { createClerkClient } from "@clerk/backend";
+import ApiError from "../utils/ApiError.js";
 
-// Middleware to check if the user is an admin
-const verifyAdmin = asyncHandler(async (req, res, next) => {
-  const { sessionId } = req.headers;
+const verifyAdmin = async (req, res, next) => {
+  const clerkClient = createClerkClient({
+    secretKey: process.env.CLERK_SECRET_KEY,
+    publishableKey: process.env.CLERK_PUBLISHABLE_KEY,
+  });
+  
+  try {
+    
 
-  if (!sessionId) {
-    throw new ApiError(401, "Unauthorized: No session found");
+    next();
+  } catch (error) {
+    console.log(error);
   }
+};
 
-  // Fetch the session information using Clerk SDK
-  const session = await clerk.sessions.getSession(sessionId);
-  const user = await users.getUser(session.userId);
-
-  // Assuming `user.publicMetadata` or `user.privateMetadata` has a role field
-  const userRole = user.publicMetadata.role; // or privateMetadata
-
-  if (userRole !== 'admin') {
-    throw new ApiError(403, "Forbidden: You do not have admin privileges");
-  }
-
-  // User is an admin, proceed to the next middleware/route
-  next();
-});
-
-export {verifyAdmin}
+export { verifyAdmin };

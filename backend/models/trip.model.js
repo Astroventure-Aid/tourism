@@ -18,26 +18,32 @@ const tripSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide main photo of location"],
     },
-    price:{
+    price: {
       type: Number,
       required: [true, "Please provide Price"],
     },
-    
+    status: {
+      // ComingSoon, Started, End
+      type: String,
+      required: [true, "Please provide Price"],
+      default: "ComingSoon",
+    },
+
     slotsAvailable: {
       type: Number,
+    },
+    discription: {
+      type: String,
     },
     highlights: [
       {
         type: String,
       },
     ],
-    discription: {
-      type: String,
-    },
     photos: [
       {
-        type: String
-      }
+        type: String,
+      },
     ],
   },
   {

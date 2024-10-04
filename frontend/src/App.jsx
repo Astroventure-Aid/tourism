@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
-import { SignedIn, SignedOut, RedirectToSignIn, SignIn, useAuth, useUser } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, RedirectToSignIn, SignIn, useAuth, useUser, useSession } from "@clerk/clerk-react";
 import Header from './components/Header/Header.jsx'; // Adjust the path according to your folder structure
 import Footer from './components/Footer/Footer.jsx';
 import Home from './pages/Home/Home.jsx';
@@ -25,10 +25,14 @@ function App() {
 
   const { isLoaded, isSignedIn, user } = useUser();
   const [isAdmin, setIsAdmin] = useState(false)
+  const { session } = useSession();
 
   useEffect(() => {
     const isAdmin = user?.publicMetadata?.role === 'admin';
     setIsAdmin(isAdmin)
+    console.log(user);
+    console.log(session);
+    
   }, [isLoaded, isSignedIn])
 
 

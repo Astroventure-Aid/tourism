@@ -8,12 +8,13 @@ import fs from 'fs';
 
 // upload trips -- Admin
 const createTrip = asyncHandler(async (req, res) => {
-  let { location, origin, tripDate, mainPhoto } = req.body;
+  let { location, origin, tripDate } = req.body;
 
   req.body.location = location?.trim();
   req.body.origin = origin?.trim();
-  req.body.mainPhoto = mainPhoto?.trim();
   req.body.tripDate = tripDate?.trim();
+
+  // Cloudinary should be added
 
   const newTrip = await Trip.create(req.body);
 
@@ -31,8 +32,7 @@ const getAllTrips = asyncHandler(async (req, res) => {
 
 // get upcomming trips
 const getUpcomingTrips = asyncHandler(async (req, res) => {
-  const currentDate = new Date();
-  const upcommingTrips = await Trip.find({ tripDate: { $gt: currentDate } });
+  const upcommingTrips = await Trip.find({$or: [ { status: "ComingSoon"}, { status: "Started" } ]});
 
   return res.status(200).json(new ApiResponse(200, upcommingTrips));
 });
