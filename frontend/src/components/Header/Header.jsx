@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, SignInButton, UserButton, SignUpButton } from '@clerk/clerk-react';
 
 function Header() {
   return (
@@ -42,11 +42,11 @@ function Header() {
 
             <SignedOut>
               {/* Display Sign-In button when not signed in */}
-              <SignInButton mode="modal">
+              <SignUpButton mode="modal">
                 <button className="bg-yellow-500 text-white px-4 py-2 rounded-md">
                   Sign In
                 </button>
-              </SignInButton>
+              </SignUpButton>
             </SignedOut>
           </div>
         </Link>

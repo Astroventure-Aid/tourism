@@ -1,7 +1,7 @@
 import './App.css';
-import React from 'react';
-import { Route, Routes, Navigate } from "react-router-dom";
-import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
+import React, { useEffect } from 'react';
+import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
+import { SignedIn, SignedOut, RedirectToSignIn, SignIn, useAuth } from "@clerk/clerk-react";
 import Header from './components/Header/Header.jsx'; // Adjust the path according to your folder structure
 import Footer from './components/Footer/Footer.jsx';
 import Home from './pages/Home/Home.jsx';
@@ -30,8 +30,7 @@ function App() {
       <Route exact path="/astroventure" element={<Layout>  </Layout>} />
       <Route exact path="/trip/:tripId" element={<Layout> <TripForm /> </Layout>} />
 
-      <Route path="*" element={<Layout><NotFound/></Layout>} /> {/* 404 Route */}
-
+      <Route path="*" element={<Layout> <NotFound /></Layout>} /> {/* 404 Route */}
     </Routes>
   );
 }
