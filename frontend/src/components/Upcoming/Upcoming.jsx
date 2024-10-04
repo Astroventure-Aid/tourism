@@ -3,7 +3,7 @@ import "./Upcoming.css"; // Import the CSS file
 
 const MustSee = () => {
   return (
-    <div className="upcoming-see-container">
+    <div className="upcoming-see-container mb-6">
       <hr className="line left" />
       <h2 className="must-see-text">Upcoming Trips</h2>
       <hr className="line right" />

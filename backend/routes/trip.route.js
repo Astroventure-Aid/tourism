@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createTrip, getAllTrips, getFormsByTrip, getTrip, getUpcomingTrips, submitTripForm } from "../controllers/trip.controller.js";
+import { createTrip, getAllTrips, getFormsByTrip, getTrip, getUpcomingTrips, isFormSubmitted, submitTripForm } from "../controllers/trip.controller.js";
 import { getSpots } from "../controllers/spot.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
 import { verifyAdmin } from "../middlewares/verifyAdmin.js";
@@ -14,6 +14,8 @@ router.route("/get-trip/:tripId").get(getTrip)
 
 router.route("/submit-tripform/:tripId").post(upload.single("upiPaymentSS"),submitTripForm); // User
 router.route("/admin/get-forms/:tripId").get(verifyAdmin,getFormsByTrip) // Admin
+
+router.route("/is-form-submitted/:tripId").post(isFormSubmitted)
 
 router.route("/get-spots").get(getSpots)
 

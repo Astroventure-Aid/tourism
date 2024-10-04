@@ -17,7 +17,7 @@ function UpcomingSlider() {
 
   return (
     <>
-      <div className="mb-10 md:basis-1/2 lg:basis-1/3  " >
+      <div className="mb-16 md:basis-1/2 lg:basis-1/3  " >
         <Carousel
           className="relative overflow-hidden rounded-lg"
           orientation="horizontal"
@@ -36,7 +36,6 @@ function UpcomingSlider() {
                 </CarouselItem>
               ))
             }
-
 
           </CarouselContent>
           <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-red-500 text-black p-3 rounded-full shadow-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 transition" />

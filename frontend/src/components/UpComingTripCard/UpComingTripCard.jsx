@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 const UpComingTripCard = ({ trip }) => {
   const navigate = useNavigate()
 
-  const handleClick = ()=>{
+  const handleClick = () => {
     navigate(`/trip/${trip._id}`)
   }
   return (
@@ -16,9 +16,9 @@ const UpComingTripCard = ({ trip }) => {
           <div className="">
             <div className="text-4xl font-semibold mb-3">{trip.location}</div>
             {trip.status === "Started" ? (
-              <div className="text-sm text-gray-500">Date: {trip.tripDate}</div>
+              <div className="text-lg text-gray-600">Date: {trip.tripDate.slice(0, 10)}</div>
             ) : (
-              <div className="text-3xl text-red-500">Coming Soon</div>
+              <div className="text-2xl text-red-500">Coming Soon</div>
             )}
             <p className="mt-2 text-gray-600">{trip.origin}</p>
           </div>

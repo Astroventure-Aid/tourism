@@ -5,7 +5,7 @@ import TripCard from "../TripCard/TripCard.jsx";
 function Slider() {
   return (
     <>
-      <div className="mb-10 md:basis-1/2 lg:basis-1/3  " >
+      <div className="mb-16 md:basis-1/2 lg:basis-1/3  " >
         <Carousel
           className="relative overflow-hidden rounded-lg"
           orientation="horizontal"

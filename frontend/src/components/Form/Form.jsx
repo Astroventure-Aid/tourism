@@ -36,15 +36,18 @@ const FormComponent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-
-    // const res = await axios.post(`http://localhost:4000/api/v1/trip/submit-tripform/${tripId}`)
+    const config = {
+      headers: { "Content-Type": "multipart/form-data" },
+    };
+    const res = await axios.post(`${String(import.meta.env.VITE_APP_BACKEND_URI)}/api/v1/trip/submit-tripform/${tripId}`, formData, config)
+    console.log(res);
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="bg-grey-50 p-8 rounded-lg shadow-md max-w-lg w-full">
         {/* Form Title */}
-        <div className="text-center bg-black text-white py-3 rounded-t-lg mb-6 font-bold text-lg">
+        <div className="text-center bg-slate-800 text-white py-3 rounded-t-lg mb-6 font-bold text-lg">
           Please enter your details
         </div>
 
@@ -60,6 +63,7 @@ const FormComponent = () => {
               onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter your name"
+              required
             />
           </div>
 
@@ -73,6 +77,7 @@ const FormComponent = () => {
               onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter your email"
+              required
             />
           </div>
 
@@ -86,6 +91,7 @@ const FormComponent = () => {
               onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter your phone number"
+              required
             />
           </div>
 
@@ -112,6 +118,7 @@ const FormComponent = () => {
               onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter transaction ID"
+              required
             />
           </div>
 

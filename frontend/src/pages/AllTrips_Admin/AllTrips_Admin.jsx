@@ -23,14 +23,14 @@ function AllTrips_Admin() {
       <div className='mainContainer'>
         {
           trips && trips.map((trip) => (
-            <div className=" p-4 px-10 bg-white shadow-md rounded-lg border border-gray-200 flex flex-row justify-between mb-2">
+            <div className=" p-4 px-10 bg-white shadow-md rounded-lg border border-gray-200 flex flex-row justify-between mb-2" key={trip._id}>
               <div className="mb-4 flex flex-col">
                 <span className="text-lg font-semibold text-gray-800">
                   Location: <span className="font-normal">{trip.location}</span>
                 </span>
                 <div className="mt-1">
                   <span className="text-sm text-gray-600">
-                    Trip Date: <span className="font-normal">{trip.tripDate}</span>
+                    Trip Date: <span className="font-normal">{trip.tripDate.slice(0, 10)}</span>
                   </span>
                 </div>
                 <div className="mt-1">

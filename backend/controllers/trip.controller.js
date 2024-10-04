@@ -126,6 +126,22 @@ const getFormsByTrip = asyncHandler(async (req, res) => {
   return res.status(200).json(new ApiResponse(200, forms));
 });
 
+const isFormSubmitted = asyncHandler(async (req, res) => {
+  const { tripId } = req.params;
+
+  const trip = await Trip.findById(tripId);
+
+  if (!trip) {
+    throw new ApiError(404, "Trip not found");
+  }
+  const response = await TripForm.find({email : req.body.email, tripId})
+  console.log(response);
+
+  const isSubmitted = response.length > 0
+  
+  return res.status(200).json(new ApiResponse(200, isSubmitted));
+});
+
 export {
   createTrip,
   getAllTrips,
@@ -133,4 +149,5 @@ export {
   getUpcomingTrips,
   submitTripForm,
   getFormsByTrip,
+  isFormSubmitted
 };

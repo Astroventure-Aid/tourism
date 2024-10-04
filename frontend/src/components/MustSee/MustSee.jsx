@@ -3,7 +3,7 @@ import "./MustSee.css"; // Import the CSS file
 
 const MustSee = () => {
   return (
-    <div className="must-see-container">
+    <div className="must-see-container mb-8">
       <hr className="line left" />
       <h2 className="must-see-text">Must-See</h2>
       <hr className="line right" />
