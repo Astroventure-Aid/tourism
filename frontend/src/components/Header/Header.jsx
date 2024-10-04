@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
-import { SignedIn, SignedOut, SignInButton, UserButton, SignUpButton } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from '@clerk/clerk-react';
 
 function Header() {
+  const { isLoaded, isSignedIn, user } = useUser();
+  const [isAdmin, setIsAdmin] = useState(false)
+
+  useEffect(() => {
+    const isAdmin = user?.publicMetadata?.role === 'admin';
+    setIsAdmin(isAdmin)
+  }, [isLoaded, isSignedIn])
+
   return (
     <header className=" fixed top-0 left-0 w-full glass shadow-lg z-50">
       <div className="container mx-auto flex justify-between items-center p-2">
@@ -27,9 +35,13 @@ function Header() {
           <Link to="/astroventure">
             <span className="text-gray-800 hover:text-blue-600 transition duration-300">Astroventure</span>
           </Link>
-          <Link to="/contact">
+          {!isAdmin ? <Link to="/contact">
             <span className="text-gray-800 hover:text-blue-600 transition duration-300">Contact</span>
-          </Link>
+          </Link> :
+            <Link to="/admin/allTrips">
+              <span className="text-gray-800 hover:text-blue-600 transition duration-300">Dashboard</span>
+            </Link>
+          }
         </nav>
 
         {/* Login BTN */}
@@ -42,11 +54,11 @@ function Header() {
 
             <SignedOut>
               {/* Display Sign-In button when not signed in */}
-              <SignUpButton mode="modal">
+              <SignInButton mode="modal">
                 <button className="bg-yellow-500 text-white px-4 py-2 rounded-md">
                   Sign In
                 </button>
-              </SignUpButton>
+              </SignInButton>
             </SignedOut>
           </div>
         </Link>
