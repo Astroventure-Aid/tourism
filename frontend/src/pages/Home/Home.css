@@ -1,38 +1,36 @@
+/* Video container takes up full width and height (you can adjust height as needed) */
+.video-container {
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Adjust the height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
 
-.mainPhotoContainer {
-    width: 100%; /* Full width */
-    height: 50vw; /* Full height of the viewport */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* To prevent overflow if the image is too large */
-  }
-  
-  .mainPhotoContainer img {
-    width: 100%; /* Make the image take the full width */
-    height: 100%; /* Make the image take the full height */
-    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
-  }
-  
+/* Background video covers the entire container */
+.background-video {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Ensures video covers the container while maintaining aspect ratio */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
-  .mainPhotoContainer iframe {
-    width: 100%; /* Make the image take the full width */
-    height: 100%; /* Make the image take the full height */
-    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
-  }
-  video::-webkit-media-controls {
-    display: none !important;
-  }
-  
-  video::-webkit-media-controls-enclosure {
-    display: none !important;
-  }
-  
-  video::-webkit-media-controls-play-button,
-  video::-webkit-media-controls-volume-slider,
-  video::-webkit-media-controls-current-time-display,
-  video::-webkit-media-controls-time-remaining-display,
-  video::-webkit-media-controls-timeline {
-    display: none !important;
-  }
-  
+/* Hide any native controls and symbols */
+video::-webkit-media-controls,
+video::-webkit-media-controls-enclosure,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display {
+  display: none !important;
+}
+
+/* Firefox and other browser control hiding */
+video::-moz-media-controls {
+  display: none !important;
+}
