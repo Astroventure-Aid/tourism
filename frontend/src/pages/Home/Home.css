@@ -14,3 +14,25 @@
     object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
   }
   
+
+  .mainPhotoContainer iframe {
+    width: 100%; /* Make the image take the full width */
+    height: 100%; /* Make the image take the full height */
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  }
+  video::-webkit-media-controls {
+    display: none !important;
+  }
+  
+  video::-webkit-media-controls-enclosure {
+    display: none !important;
+  }
+  
+  video::-webkit-media-controls-play-button,
+  video::-webkit-media-controls-volume-slider,
+  video::-webkit-media-controls-current-time-display,
+  video::-webkit-media-controls-time-remaining-display,
+  video::-webkit-media-controls-timeline {
+    display: none !important;
+  }
+  
