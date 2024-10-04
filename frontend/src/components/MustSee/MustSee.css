@@ -1,25 +1,29 @@
-.coverflow-slider {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .swiper-slide {
-    width: 300px; /* Adjust slide width */
-    height: 300px; /* Adjust slide height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #000; /* Slide background */
-    border-radius: 15px;
-    overflow: hidden;
-  }
-  
-  .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
+.must-see-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0; /* Adjusts spacing around the component */
+}
+
+.must-see-text {
+  color: red;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 20px;
+  text-transform: uppercase;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: #c4c4c4; /* Light gray line */
+  border: none;
+}
+
+.line.left {
+  margin-right: 10px;
+}
+
+.line.right {
+  margin-left: 10px;
+}

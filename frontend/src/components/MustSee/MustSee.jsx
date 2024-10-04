@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import "./MustSee.css"; // Import the CSS file
 
-function MustSee() {
+const MustSee = () => {
   return (
-    <div>
-      
+    <div className="must-see-container">
+      <hr className="line left" />
+      <h2 className="must-see-text">Must-See</h2>
+      <hr className="line right" />
     </div>
-  )
-}
+  );
+};
 
-export default MustSee
+export default MustSee;
