@@ -72,7 +72,7 @@ function Header() {
             <SignedOut>
               {/* Display Sign-In button when not signed in */}
               <SignInButton mode="modal">
-                <button className=" bg-slate-600 text-white px-4 py-2 rounded-md">
+                <button className=" bg-red-600 text-white px-4 py-2 rounded-md">
                   Sign In
                 </button>
               </SignInButton>
