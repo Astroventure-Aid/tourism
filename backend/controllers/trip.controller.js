@@ -81,7 +81,6 @@ const submitTripForm = asyncHandler(async (req, res) => {
   let cloudinaryObject = null;
   if (req.file) {
     cloudinaryObject = await uploadOnCloudinary(req.file);
-    console.log('Cloudinary Upload Response:', cloudinaryObject);
   } else {
     throw new ApiError(400, 'File not uploaded');
   }
@@ -90,8 +89,6 @@ const submitTripForm = asyncHandler(async (req, res) => {
   fs.unlink(req.file.path, (err) => {
     if (err) {
       console.error("Error while deleting file:", err);
-    } else {
-      console.log("File successfully deleted from the backend folder");
     }
   });
 
@@ -135,7 +132,6 @@ const isFormSubmitted = asyncHandler(async (req, res) => {
     throw new ApiError(404, "Trip not found");
   }
   const response = await TripForm.find({email : req.body.email, tripId})
-  console.log(response);
 
   const isSubmitted = response.length > 0
   

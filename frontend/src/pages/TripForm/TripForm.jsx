@@ -8,7 +8,6 @@ import axios from 'axios';
 function TripForm() {
   const [trip, setTrip] = useState(null)
   const { tripId } = useParams()
-  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const getTrip = async () => {
     const res = await axios.get(`${String(import.meta.env.VITE_APP_BACKEND_URI)}/api/v1/trip/get-trip/${tripId}`)
