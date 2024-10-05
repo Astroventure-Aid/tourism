@@ -43,7 +43,7 @@ function TripForm() {
                     <li className='text-md text-gray-600'>Date: {trip?.tripDate.slice(0, 10)}</li>
                 }
                 <li className='text-md text-gray-600'>{trip?.origin}</li>
-                <li className='text-md text-gray-600'>{trip?.price}</li>
+                <li className='text-md text-gray-600 text-xl'>Price: {trip?.price}</li>
                 <li className='text-md text-gray-600'>{trip?.description}</li>
                 <li className='text-md text-gray-600'>{trip?.highlights}</li>
               </ul>
