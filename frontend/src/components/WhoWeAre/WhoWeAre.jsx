@@ -99,7 +99,7 @@ const WhoWeAre = () => {
       </div>
 
       {/* Right Section */}
-      <div className="lg:w-1/2 mt-8 lg:mt-0 relative">
+      <div className="lg:w-1/2 mt-8 lg:mt-0 relative ">
         <img
           src="https://via.placeholder.com/350x350" // Replace with your image link
           alt="Travelers"
@@ -107,11 +107,11 @@ const WhoWeAre = () => {
         />
 
         {/* Red Badge */}
-        <div className="absolute top-0 right-0 bg-red-600 text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center text-xs sm:text-sm lg:text-base font-bold shadow-lg transform translate-x-1/2 -translate-y-1/2">
+        {/* <div className="absolute top-0 right-0 bg-red-600 text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center text-xs sm:text-sm lg:text-base font-bold shadow-lg transform translate-x-1/2 -translate-y-1/2">
           <span className="text-center">
             2.5K+<br />Tours Success
           </span>
-        </div>
+        </div> */}
       </div>
     </section>
   );

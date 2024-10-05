@@ -7,7 +7,7 @@ import Loader from '../Loader/Loader';
 const FormComponent = () => {
   const { user } = useUser();
   const userEmail = user.emailAddresses[0].emailAddress
-  const [isSubmitted, setIsSubmitted] = useState(true)
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const [loading, setloading] = useState(false)
 
   // State variables for form fields

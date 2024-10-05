@@ -21,55 +21,61 @@ const FooterLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-red-600 text-white py-8">
-      <div className="container mx-auto">
-        <div className="grid md:grid-cols-3 gap-4">
+    <footer className="bg-red-600 text-white py-12">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Quick Links */}
-          <div className="py-4">
-            <h1 className="text-xl text-black font-bold mb-3">Quick Links</h1>
-            <ul className="flex flex-col gap-2">
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
+            <ul className="space-y-2">
               {FooterLinks.map((link) => (
-                <li className="cursor-pointer hover:underline text-black" key={link.title}>
-                  <a href={link.link}>{link.title}</a>
+                <li key={link.title}>
+                  <a
+                    href={link.link}
+                    className="text-gray-200 hover:text-white transition-colors"
+                  >
+                    {link.title}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Contact Information */}
-          <div className="py-4">
-            <h1 className="text-xl text-black font-bold mb-3">Contact Us</h1>
-            <p className="flex items-center gap-2 text-black">
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
+            <p className="flex items-center gap-2 text-gray-200 mb-2">
               <FaMobileAlt /> +999 858 624 984
             </p>
-            <p className="mt-2 text-black">Send Mail: info@example.com</p>
-            <p className="mt-2 flex items-center gap-2 text-black">
-              <FaLocationArrow /> House 168/170, Avenue 01, Mirpur DOHS, Dhaka Bangladesh
+            <p className="text-gray-200 mb-2">Send Mail: info@example.com</p>
+            <p className="flex items-center gap-2 text-gray-200 mb-4">
+              <FaLocationArrow /> House 168/170, Avenue 01, Mirpur DOHS, Dhaka, Bangladesh
             </p>
-            <p className="mt-4 text-black">We Are Here</p>
-            <p className="mt-1 text-black">Quisque purus augue, facilisis arci neque idont accumsan fringilla massa. Vivamusol id nibhom condimentum.</p>
+            <p className="text-gray-200">
+              We Are Here: Quisque purus augue, facilisis arcu neque id accumsan.
+            </p>
           </div>
 
           {/* Payment Partners */}
-          <div className="py-4">
-            <h1 className="text-xl font-bold mb-3 text-black">Payment Partner</h1>
-            <div className="flex gap-4">
-              <FaCcVisa className="text-2xl" />
-              <FaCcStripe className="text-2xl" />
-              <FaCcAmazonPay className="text-2xl" />
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Payment Partners</h2>
+            <div className="flex space-x-6">
+              <FaCcVisa className="text-3xl text-gray-200" />
+              <FaCcStripe className="text-3xl text-gray-200" />
+              <FaCcAmazonPay className="text-3xl text-gray-200" />
             </div>
           </div>
         </div>
 
         {/* Social Media Links */}
-        <div className="flex justify-center mt-6">
-          <a href="#" className="mx-2">
+        <div className="flex justify-center mt-8 space-x-6">
+          <a href="#" className="hover:text-gray-300 transition-colors">
             <FaInstagram className="text-3xl" />
           </a>
-          <a href="#" className="mx-2">
+          <a href="#" className="hover:text-gray-300 transition-colors">
             <FaFacebook className="text-3xl" />
           </a>
-          <a href="#" className="mx-2">
+          <a href="#" className="hover:text-gray-300 transition-colors">
             <FaLinkedin className="text-3xl" />
           </a>
         </div>

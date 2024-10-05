@@ -37,9 +37,8 @@ function App() {
     <Routes>
       {/* Public routes */}
       <Route exact path="/" element={<Layout> <Home /> </Layout>} />
-      <Route exact path="/about" element={<Layout>  </Layout>} />
+      <Route exact path="/about" element={<Layout> </Layout>} />
       <Route exact path="/contact" element={<Layout>  </Layout>} />
-      <Route exact path="/astroventure" element={<Layout>  </Layout>} />
       <Route exact path="/trip/:tripId" element={<Layout> <TripForm /> </Layout>} />
       {
         isAdmin &&

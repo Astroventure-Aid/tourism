@@ -61,11 +61,6 @@ function Header() {
               About
             </span>
           </Link>
-          <Link to="/">
-            <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300">
-              Astroventure
-            </span>
-          </Link>
           {!isAdmin ? (
             <Link to="/">
               <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300">
@@ -112,11 +107,6 @@ function Header() {
           <Link to="/" onClick={handleMenuToggle}>
             <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300 block">
               About
-            </span>
-          </Link>
-          <Link to="/" onClick={handleMenuToggle}>
-            <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300 block">
-              Astroventure
             </span>
           </Link>
           {!isAdmin ? (
