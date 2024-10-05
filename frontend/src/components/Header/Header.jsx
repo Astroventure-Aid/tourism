@@ -36,18 +36,18 @@ function Header() {
               Home
             </span>
           </Link>
-          <Link to="/about">
+          <Link to="/">
             <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300">
               About
             </span>
           </Link>
-          <Link to="/astroventure">
+          <Link to="/">
             <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300">
               Astroventure
             </span>
           </Link>
           {!isAdmin ? (
-            <Link to="/contact">
+            <Link to="/">
               <span className="text-gray font-medium text-lg hover:text-red-600 transition duration-300">
                 Contact
               </span>

@@ -8,11 +8,10 @@ import fs from 'fs';
 
 // upload trips -- Admin
 const createTrip = asyncHandler(async (req, res) => {
-  let { location, origin, tripDate } = req.body;
+  let { location, origin } = req.body;
 
   req.body.location = location?.trim();
   req.body.origin = origin?.trim();
-  req.body.tripDate = tripDate?.trim();
 
   // Cloudinary should be added
 

@@ -40,10 +40,12 @@ const tripSchema = new mongoose.Schema(
         type: String,
       },
     ],
-    photos: [
-      {
-        type: String,
-      },
+    schedule: [
+      [
+        {
+          type: String,
+        },
+      ],
     ],
   },
   {
