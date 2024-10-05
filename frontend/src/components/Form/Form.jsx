@@ -103,7 +103,7 @@ const FormComponent = () => {
               </div>
 
               {/* Form Fields */}
-              <form className="space-y-6" onSubmit={handleSubmit}>
+              <form className="space-y-6  md:py-1 text-sm mb-2" onSubmit={handleSubmit}>
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
@@ -175,7 +175,7 @@ const FormComponent = () => {
 
                 {/* upiPaymentSS */}
                 <div>
-                  <label htmlFor="upiPaymentSS" className="block text-sm font-medium text-gray-700">upiPaymentSS</label>
+                  <label htmlFor="upiPaymentSS" className="block text-sm font-medium text-gray-700">Add UPI Payment Screen Shot</label>
                   <input
                     type="file"
                     id="upiPaymentSS"
@@ -197,6 +197,7 @@ const FormComponent = () => {
               </form>
             </div>
           </div>
+          
         </div>
       }
 

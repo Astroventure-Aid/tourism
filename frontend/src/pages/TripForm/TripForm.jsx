@@ -21,7 +21,7 @@ function TripForm() {
   return (
     <div className='tripForm min-h-screen flex items-center justify-center'>
       <SignedIn>
-        <div className='w-full mx-auto p-6 bg-white rounded-lg '>
+        <div className='w-full mx-auto bg-white rounded-lg '>
           <div className='w-full max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg'>
             {/* Trip Info */}
             <div className='flex flex-col md:flex-row items-center md:items-start'>
@@ -43,8 +43,8 @@ function TripForm() {
                     <li className='text-md text-gray-600'>Date: {trip?.tripDate.slice(0, 10)}</li>
                 }
                 <li className='text-md text-gray-600'>{trip?.origin}</li>
-                <li className='text-md text-gray-600 text-xl'>Price: {trip?.price}</li>
-                <li className='text-md text-gray-600'>{trip?.description}</li>
+                <li className='text-md text-gray-600 font-bold'>Price: {trip?.price}</li>
+                <li className='text-md text-black-600  text-left'>{trip?.description}</li>
                 <li className='text-md text-gray-600'>{trip?.highlights}</li>
               </ul>
             </div>
@@ -55,7 +55,7 @@ function TripForm() {
                 {trip?.schedule.map((daySchedule, dayIndex) => (
                   <div key={dayIndex} className="bg-gray-100 p-6 rounded-lg shadow-md mb-8">
                     {/* Day Heading */}
-                    <h2 className="text-lg font-semibold mb-4 text-center text-blue-600">
+                    <h2 className="text-lg font-semibold  text-center text-blue-600">
                       Day {dayIndex + 1}
                     </h2>
 

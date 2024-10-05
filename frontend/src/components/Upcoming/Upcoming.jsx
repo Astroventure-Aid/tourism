@@ -1,14 +1,20 @@
 import React from "react";
-import "./Upcoming.css"; // Import the CSS file
 
-const MustSee = () => {
+const Upcoming = () => {
   return (
-    <div className="upcoming-see-container mb-6">
-      <hr className="line left" />
-      <h2 className="must-see-text">Upcoming Trips</h2>
-      <hr className="line right" />
+    <div className="upcoming-see-container mb-6 flex items-center justify-center">
+      {/* Left Line */}
+      <hr className="line w-1/4 sm:w-1/3" /> 
+
+      {/* Upcoming Trips Text */}
+      <h2 className="must-see-text text-3xl sm:text-sm md:text-4xl font-bold px-4 text-red-600 whitespace-nowrap">
+        Upcoming Trips
+      </h2>
+
+      {/* Right Line */}
+      <hr className="line w-1/4 sm:w-1/3" />
     </div>
   );
 };
 
-export default MustSee;
+export default Upcoming;
