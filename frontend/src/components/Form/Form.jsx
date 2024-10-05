@@ -55,13 +55,18 @@ const FormComponent = () => {
   };
 
   const checkIsSubmitted = async () => {
-    const {data} = await axios.get(`${String(import.meta.env.VITE_APP_BACKEND_URI)}/api/v1/trip/get-trip/${tripId}`)
-    if(data){
+    const config = {
+      headers: { "Content-Type": "application/json" },
+    };
+    const {data} = await axios.post(`${String(import.meta.env.VITE_APP_BACKEND_URI)}/api/v1/trip/is-form-submitted/${tripId}`, {email: userEmail}, config)
+    
+    if(data.data){
       setIsSubmitted(true)
     }
     else{
       setIsSubmitted(false)
     }
+    
   }
 
   useEffect(() => {

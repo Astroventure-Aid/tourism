@@ -12,7 +12,6 @@ function TripForm() {
   const getTrip = async () => {
     const res = await axios.get(`${String(import.meta.env.VITE_APP_BACKEND_URI)}/api/v1/trip/get-trip/${tripId}`)
     setTrip(res.data.data)
-    console.log(res.data.data);
   }
 
   useEffect(() => {
@@ -51,28 +50,28 @@ function TripForm() {
             </div>
 
             {
-                  <div className="w-full max-w-4xl mx-auto p-4 ">
-                    {/* Loop through the schedule object */}
-                    {trip?.schedule.map((daySchedule, dayIndex) => (
-                      <div key={dayIndex} className="bg-gray-100 p-6 rounded-lg shadow-md mb-8">
-                        {/* Day Heading */}
-                        <h2 className="text-lg font-semibold mb-4 text-center text-blue-600">
-                          Day {dayIndex + 1}
-                        </h2>
+              <div className="w-full max-w-4xl mx-auto p-4 ">
+                {/* Loop through the schedule object */}
+                {trip?.schedule.map((daySchedule, dayIndex) => (
+                  <div key={dayIndex} className="bg-gray-100 p-6 rounded-lg shadow-md mb-8">
+                    {/* Day Heading */}
+                    <h2 className="text-lg font-semibold mb-4 text-center text-blue-600">
+                      Day {dayIndex + 1}
+                    </h2>
 
-                        {/* Loop through the events for each day */}
-                        <ul className="space-y-2 text-gray-700">
-                          {daySchedule.map((event, eventIndex) => (
-                            <li key={eventIndex} className="flex items-start">
-                              <span className="mr-2 text-lg">•</span>
-                              <p className="text-sm">{event}</p>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
+                    {/* Loop through the events for each day */}
+                    <ul className="space-y-2 text-gray-700">
+                      {daySchedule.map((event, eventIndex) => (
+                        <li key={eventIndex} className="flex items-start">
+                          <span className="mr-2 text-lg">•</span>
+                          <p className="text-sm">{event}</p>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                }
+                ))}
+              </div>
+            }
 
             {/* Form Component */}
             <div className='mt-6'>
