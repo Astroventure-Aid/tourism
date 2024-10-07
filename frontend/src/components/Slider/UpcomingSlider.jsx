@@ -7,8 +7,12 @@ function UpcomingSlider() {
   const [trips, setTrips] = useState([]);
 
   const getTrips = async () => {
-    const { data } = await axios.get(`${String(import.meta.env.VITE_APP_BACKEND_URI)}/api/v1/trip/get-upcoming-trips`)
-    setTrips(data.data);
+    try {
+      const { data } = await axios.get(`${String(import.meta.env.VITE_APP_BACKEND_URI)}/api/v1/trip/get-upcoming-trips`)
+      setTrips(data.data);
+    } catch (error) {
+      // console.log(error);
+    }
   }
 
   useEffect(() => {
@@ -36,8 +40,8 @@ function UpcomingSlider() {
                 </CarouselItem>
               ))
             }
-
           </CarouselContent>
+          
           <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-red-500 text-black p-3 rounded-full shadow-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 transition" />
           <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-red-500 text-black p-3 rounded-full shadow-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 transition" />
         </Carousel>

@@ -8,8 +8,12 @@ function AllTrips_Admin() {
   const [trips, setTrips] = useState([]);
 
   const getTrips = async () => {
-    const { data } = await axios.get(`${String(import.meta.env.VITE_APP_BACKEND_URI)}/api/v1/trip/admin/get-all-trips`)
-    setTrips(data.data);
+    try {
+      const { data } = await axios.get(`${String(import.meta.env.VITE_APP_BACKEND_URI)}/api/v1/trip/admin/get-all-trips`)
+      setTrips(data.data);
+    } catch (error) {
+      // console.log(error);
+    }
   }
 
   // Simulate backend data fetch
